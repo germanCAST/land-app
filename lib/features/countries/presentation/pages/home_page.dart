@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:land_app/features/countries/presentation/widgets/card_countries_list_screen.dart';
+import 'package:land_app/features/countries/presentation/widgets/country_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -15,12 +17,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Text(widget.title),
+        ),
         titleTextStyle: TextStyle(fontSize: 40, color: Colors.black),
       ),
-      body: Center(
-        child: Text('Hola'),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: CountrySearchBar(),
+          ),
+          // CardCountries(),
+        ],
       ),
     );
   }
