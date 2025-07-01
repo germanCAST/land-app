@@ -43,9 +43,9 @@ class _CardCountriesState extends ConsumerState<CardCountries> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16),
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: SizedBox(
         child: Column(
           children: countryCards.map((country) {
             return Container(

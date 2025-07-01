@@ -16,22 +16,23 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text(widget.title),
-        ),
-        titleTextStyle: TextStyle(fontSize: 40, color: Colors.black),
-      ),
-      body: Column(
-        children: [
-          Padding(
+        appBar: AppBar(
+          title: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: CountrySearchBar(),
+            child: Text(widget.title),
           ),
-          // CardCountries(),
-        ],
-      ),
-    );
+          titleTextStyle: TextStyle(fontSize: 40, color: Colors.black),
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: CountrySearchBar(),
+            ),
+            Expanded(
+              child: CardCountries(), // 👈 Limita su altura
+            ),
+          ],
+        ));
   }
 }
